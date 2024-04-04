@@ -2,4 +2,4 @@
 
 LISTA ZADAN:
 
-- [x] mój drogi pracowniku, zrób zmiany w kodzie
+- [x] mój drogi pracowniku, zrób zmiany w kodzie tym

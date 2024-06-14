@@ -9,12 +9,13 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
+import MarkerPlacement from "./MarkerPlacement";
 function Map() {
   const [wojewodztwa, setwojewodztwa] = useState(null);
 
   const makePopup = (feature, layer) => {
     if (feature.properties) {
-      console.log(feature.properties);
+      //console.log(feature.properties);
       layer.bindPopup(`
       <h1>Dane wojewodztwa</h1>
       <strong>Nazwa:</strong> ${feature.properties.jpt_nazwa_}</br>
@@ -24,7 +25,7 @@ function Map() {
   };
 
   useEffect(() => {
-    console.log("aaa");
+    //console.log("aaa");
     const getData = () => {
       axios
         .get(
@@ -63,6 +64,7 @@ function Map() {
               ""
             )}
           </LayersControl.Overlay>
+          <MarkerPlacement />
         </LayersControl>
       </MapContainer>
     </div>

@@ -3,7 +3,8 @@ import "./App.css";
 import Home from "./components/home/Home";
 import Services from "./components/services/Services";
 import Map from "./components/map/Map";
-import { Dashboard } from "@mui/icons-material";
+import { AbcOutlined, Dashboard } from "@mui/icons-material";
+import About from "./components/about/About";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/services/map",
     element: <Map />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
   {
     path: "/services/dashboard",

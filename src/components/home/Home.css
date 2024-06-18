@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .home_left {
-  background-color: pink;
+  /* background-color: pink; */
   width: 40vw;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   margin: 50px;
 }
 .home_right {
-  background-color: blue;
+  /* background-color: blue; */
   width: 40vw;
   display: flex;
   flex-direction: column;
@@ -46,18 +46,18 @@
   width: 250px;
   height: 80px;
   margin: 10vh 0;
-  background-color: rgba(31, 163, 7, 0.875);
+  /* background-color: rgba(31, 163, 7, 0.875); */
   color: #ffffff;
   border-color: transparent;
   font-size: 18px;
 }
 .home_right_btn:hover {
   background-color: #ffffff;
-  color: rgba(31, 163, 7, 0.875);
-  border-color: rgba(31, 163, 7, 0.875);
+  /* color: rgba(31, 163, 7, 0.875); */
+  /* border-color: rgba(31, 163, 7, 0.875); */
 }
 .home_top_about {
-  color: rgb(78, 75, 75);
+  /* color: rgb(78, 75, 75); */
   font-style: normal;
   top: 10px;
   right: 10px;
@@ -66,7 +66,7 @@
 }
 .home_top {
   min-height: 15vh;
-  background-color: pink;
+  /* background-color: pink; */
 }
 .home_bottom {
   display: flex;

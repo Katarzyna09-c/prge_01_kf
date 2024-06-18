@@ -1,0 +1,14 @@
+.about {
+  width: 100vw;
+  height: 150vh;
+  background-color: black;
+  color: #ddd;
+  margin: 0;
+  font-size: 18px;
+  padding: 15px;
+}
+.about_text {
+  padding: 20px;
+  text-align: justify;
+  text-indent: 50px;
+}

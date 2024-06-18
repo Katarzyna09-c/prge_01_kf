@@ -10,30 +10,36 @@ import {
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import MarkerPlacement from "./MarkerPlacement";
+
 function Map() {
   const [wojewodztwa, setwojewodztwa] = useState(null);
 
   const makePopup = (feature, layer) => {
     if (feature.properties) {
-      //console.log(feature.properties);
+      // console.log(feature.properties);
       layer.bindPopup(`
-      <h1>Dane wojewodztwa</h1>
-      <strong>Nazwa:</strong> ${feature.properties.jpt_nazwa_}</br>
-      <strong>Powierzchnia:</strong> ${feature.properties.jpt_powier}
-      <img src=${feature.properties.img_source} alt="Lamp" width="32" height="32"/>`);
+      <h1>DANE WOJEWÓDZTWA</h1>
+      <strong> Nazwa:</strong> ${feature.properties.jpt_nazwa_}</br>
+      <strong> Powierzchnia:</strong> ${feature.properties.jpt_powier} </br>
+      <img src= ${feature.properties.source} alt="Lamp" width="32" height="32"/>
+     
+      `);
     }
   };
 
   useEffect(() => {
-    //console.log("aaa");
+    // console.log("aaa");
     const getData = () => {
       axios
         .get(
-          "http://localhost:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Agranice_wojewodztw_db_4326&maxFeatures=50&outputFormat=application%2Fjson"
+          "http://localhost:8081/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Agranice_wojewodztw_db_4326&maxFeatures=50&outputFormat=application%2Fjson"
         )
         .then((dane) => {
-          //console.log(dane);
+          // console.log(dane);
           setwojewodztwa(dane.data);
+        })
+        .catch((error) => {
+          console.log(`Opis błędu ${error}`);
         });
     };
     getData();
@@ -42,7 +48,7 @@ function Map() {
     <div className="map">
       <MapContainer center={[52.2322222, 21.0]} zoom={10}>
         <LayersControl>
-          <LayersControl.BaseLayer name="OSM">
+          <LayersControl.BaseLayer checked name="OSM">
             <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </LayersControl.BaseLayer>
           <LayersControl.BaseLayer name="Google">
